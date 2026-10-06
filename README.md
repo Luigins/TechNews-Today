@@ -1,6 +1,6 @@
 # 📰 TechNews Today
 
-**TechNews Today** é uma página web para um portal de notícias de tecnologia, desenvolvida utilizando HTML5 e CSS3. O projeto tem como foco a estruturação semântica de layouts de notícias e estilização visual moderna.
+**TechNews Today** é um desafio estudantil onde consiste em uma página web para um portal de notícias de tecnologia, desenvolvida utilizando HTML5 e CSS3. O projeto tem como foco a estruturação semântica de layouts de notícias e estilização visual moderna.
 
 ---
 
