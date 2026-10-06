@@ -1,0 +1,342 @@
+/* === DESAFIO TECHNEWS - PORTAL MODERNO === */
+
+/* 
+ * O seletor universal (*) aplica as regras a todos os elementos da página.
+
+ * - margin: 0 e padding: 0: removem as margens e espaçamentos internos padrão do navegador.
+
+ * - box-sizing: border-box: garante que o tamanho total do elemento inclua o padding e a borda.
+
+ */
+* {
+    MARGIN: 0;
+    PADDING: 0;
+    BOX-SIZING: BORDER-BOX;
+}
+
+/* === Estilos globais do corpo da página (body) ===
+
+ * - font-family: define a família de fontes com alternativas de recurso.
+ * - background: define a cor de fundo escura da página.
+
+ * - color: define a cor do texto principal num tom claro.
+
+ * - line-height: define o espaçamento entre linhas de texto para melhorar a legibilidade.
+ */
+
+body {
+    FONT-FAMILY: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    BACKGROUND: #0a0e27;
+    COLOR: #e4e4e7;
+    line-height: 1.6;
+}
+
+/* Header com glassmorphism (glassmorphism é um efeito visual) */
+
+/* 
+ * .header: Estilização do cabeçalho fixo da página.
+
+ * - background: gradiente translúcido para criar o efeito de vidro fosco.
+
+ * - backdrop-filter: blur(10px); = aplica o desfoque ao conteúdo que passa por trás do cabeçalho.
+
+ * - border-bottom: adiciona uma linha divisória subtil na parte inferior.
+
+ * - padding: espaçamento interno em redor do conteúdo do cabeçalho.
+
+ * - text-align: center; = alinha o texto ao centro.
+
+ * - position: sticky e top: 0; = mantêm o cabeçalho afixado no topo durante a navegação.
+
+ * - z-index: 10; = garante que o cabeçalho se mantém sobreposto aos restantes elementos.
+
+ */
+
+.cabecalho {
+    background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(219,39,119,0.1));
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* 
+
+ * .logo: Estilização do logótipo com gradiente no texto.
+
+ * - font-size: tamanho do texto do logótipo.
+ * - background: gradiente de cores que será aplicado ao texto.
+
+ * - -webkit-background-clip e background-clip; = recortam o fundo gradiente no formato do texto.
+
+ * - -webkit-text-fill-color: transparent; = torna o texto transparente para revelar o gradiente.
+
+ */
+
+.logo {
+    font-size: 36px;
+    background: linear-gradient(90deg, #6366f1, #db2777);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 
+
+ * .tagline: Estilização do subtítulo/frase de destaque abaixo do logótipo.
+
+ * - color: tom cinzento-azulado mais suave.
+
+ * - margin-top: afasta o subtítulo do logótipo.
+
+ */
+
+.tagline{
+    color: #94a3b8;
+    margin-top: 10px;
+}
+
+/* Layout principal com Grid */
+
+/* 
+
+ * .conteudo: Contentor principal do layout.
+
+ * - display: grid; = ativa a disposição em grelha (Grid Layout).
+
+ * - grid-template-columns: 1fr; = define uma única coluna por defeito (abordagem para dispositivos móveis).
+
+ * - gap: espaçamento de 20px entre os elementos da grelha.
+
+ * - max-width: limita a largura máxima do conteúdo a 1200px.
+
+ * - margin: 0 auto: centra horizontalmente o contentor na página.
+
+ * - padding: espaçamento interno em redor do conteúdo.
+
+ */
+
+.conteudo {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Artigo com card moderno */
+
+/* 
+
+ * .artigo-destaque: Estilização do cartão de artigo.
+
+ * - background: gradiente suave em tons escuros.
+
+ * - padding: espaçamento interno dentro do cartão.
+
+ * - border-radius: arredonda os cantos do cartão.
+
+ * - border: contorno fino e semi-transparente.
+
+ * - transition: suaviza a animação de transformação ao passar o cursor.
+
+ */
+
+.artigo-destaque {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ;
+}
+
+/* 
+
+ * .artigo-destaque:hover; = Efeito ao passar o cursor sobre o artigo.
+
+ * - transform: translateY(-5px); = eleva o cartão 5 pixels para cima.
+
+ */
+
+.artigo-destaque:hover {
+    transform: translateY(-5px);
+}
+
+/* 
+
+ * .artigo-destaque h2; = Título do artigo de destaque.
+
+ * - color: cor azul clara para criar destaque visual.
+
+ * - margin-bottom: espaçamento abaixo do título.
+
+ */
+
+.artigo-destaque h2 {
+    color: #60a5fa;
+    margin-bottom: 10px;
+}
+/* 
+
+ * .data: Formatação do texto da data.
+
+ * - color: tom discreto.
+
+ * - font-size: tamanho de fonte ligeiramente reduzido.
+
+ */
+.data {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* 
+
+ * .leia-mais: Estilização do elemento expansível (details/summary).
+
+ * - margin-top: afasta o elemento do texto anterior.
+
+ * - cursor: pointer; = exibe o cursor em formato de mãozinha para indicar interatividade.
+
+ */
+
+.leia-mais {
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+/* 
+
+ * .leia-mais summary: Título do botão/resumo expansível.
+
+ * - color: tom azul brilhante.
+
+ * - font-weight: bold: texto em negrito.
+
+ */
+
+.leia-mais summary {
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+/* Seção de video */
+
+/* 
+
+ * .secao-video: Contentor da secção do vídeo.
+
+ * - text-align: center; = alinha o texto ao centro.
+
+ */
+
+.secao-video {
+    text-align: center;
+}
+
+/* 
+
+ * .video-container: Moldura ou estrutura do leitor de vídeo.
+
+ * - border-radius: cantos arredondados.
+
+ * - border: contorno fino em tom azul-escuro.
+
+ * - margin-top: espaçamento em relação ao elemento anterior.
+
+ */
+
+.video-embed{
+    border-radius: 15px;
+    border: 2px solid #6366f1;
+    margin-top: 15px;
+}
+/* Newsletter com gradiente */
+
+/* 
+
+ * .secao-newsletter: Caixa da newsletter.
+
+ * - background: gradiente arroxeado para diferenciar visualmente esta secção.
+
+ * - padding: espaçamento interno.
+
+ * - border-radius: cantos arredondados.
+ 
+ */
+
+.secao-newsletter {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.form-newletter input,
+.form-newletter select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.checkbox-container {
+    margin: 15px 0;
+}
+
+.btn-inscrever {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #f59e0b, #ef4444);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-inscrever:hover {
+    transform: scale(1.05);
+}
+
+/* Footer minimalista */
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+   color: #64748b;
+}
+
+.rodape a {
+    color: #60a5fa;
+}
+
+/* Responsividade (Ver os sites em dispositivos móveis) */
+
+/* 
+
+ * @media (min-width: 768px): Regras aplicadas a ecrãs com largura igual ou superior a 768px (tablets e computadores).
+
+ * - .conteudo: altera a grelha para 2 colunas, em que a primeira tem o dobro da largura da segunda (2fr 1fr).
+
+ * - .artigo-destaque: faz com que o artigo de destaque ocupe ambas as colunas (span 2).
+ 
+ */
+
+@media (max-width: 768px) {
+    .conteudo {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .artigo-destaque {
+        grid-column: span 2;
+    }
+}
